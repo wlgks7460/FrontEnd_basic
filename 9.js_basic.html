@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_basic</title>
+    <script>
+        function showObject(){
+            // 리터럴방식
+            var person = {name:"hong", age : 20, email:"hong@naver.com"};
+            person.name = "kim"
+            person.password = "1234";
+            var str = "이름은 " + person.name + "나이는 " + person.age + "이메일 주소는 " + person.email;
+            document.getElementById("result").innerHTML=str;
+            console.log(str);
+        }
+        function convertType(){
+            // 숫자클래스 : Number, 문자클래스 : String, 참거짓 : boolean
+            var numStr = "10";
+            var str = "문자열";
+            var output = "Number 변환 : " + Number(numStr) + "<br>"
+                        +"String 변환 : " + String(10) + "<br>"
+                        +"Boolean 변환 : "  + Boolean(0) + "<br>"
+            document.getElementById("result").innerHTML = output;
+        }
+        function showNaN(){
+            var output = "10" - "문자열";
+            console.log(output);
+            console.log(typeof output);
+            document.getElementById("result").innerHTML = output;
+        }
+        function showNull(){
+            var output1; //undefined
+            var output2 = null;
+            var output = "output1의 타입은 " + (typeof output1) + "<br>"
+                        + "output2의 타입은 " + (typeof output2) + "<br>"
+                        + "output1 == output2 " + (output1 == output2) + "<br>"
+                        + "output1 === output2 " + (output1 === output2) + "<br>"
+            document.getElementById("result").innerHTML = output;
+        }
+
+        
+    </script>
+</head>
+<body>
+    <h2>js 객체</h2>
+    <button onclick="showObject()"> 객체 생성 </button>
+    <button onclick="convertType()"> 형 변환 </button>
+    <button onclick="showNaN()"> NaN 에러 발생 </button>
+    <button onclick="showNull()"> undefine, null </button>
+
+
+
+    <p id="result">변환결과</p>
+</body>
+</html>
