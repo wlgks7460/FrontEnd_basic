@@ -35,8 +35,15 @@
             var output = "output1의 타입은 " + (typeof output1) + "<br>"
                         + "output2의 타입은 " + (typeof output2) + "<br>"
                         + "output1 == output2 " + (output1 == output2) + "<br>"
-                        + "output1 === output2 " + (output1 === output2) + "<br>"
+                        + "output1 === output2 " + (output1 === output2) + "<br>" // 값이 같고 타입이 같은지 확인하는 것
             document.getElementById("result").innerHTML = output;
+        }
+        function showDateConversion(){
+            var date = new Date();
+            var date_num = date.getDate();
+            var date_str = date.toString();
+            document.getElementById("result").innerHTML = date_num;
+            console.log(date);
         }
 
         
@@ -48,6 +55,8 @@
     <button onclick="convertType()"> 형 변환 </button>
     <button onclick="showNaN()"> NaN 에러 발생 </button>
     <button onclick="showNull()"> undefine, null </button>
+    <button onclick="showDateConversion()"> date 변환</button>
+
 
 
 
